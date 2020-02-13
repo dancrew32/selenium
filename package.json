@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "geckodriver": "^1.19.1",
+    "selenium-side-runner": "^3.16.0"
+  }
+}
