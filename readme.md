@@ -1,0 +1,3 @@
+```
+make venv deps test
+```
