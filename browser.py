@@ -107,6 +107,9 @@ class Browser:
         self.elem.click()
         self.log('click')
 
+    def enter(self):
+        self.type(Keys.ENTER)
+
     def screenshot(self, name, show=False):
         image = Image.open(BytesIO(self.elem.screenshot_as_png))
         fname = f'./{name}.png'
