@@ -41,6 +41,13 @@ class Browser:
         self.driver.maximize_window()
         self.log('maximize')
 
+    def js(self, js):
+        out = self.driver.execute_script(js)
+        self.log('js', out=out)
+
+    def bottom(self):
+        self.js('window.scrollTo(0, document.body.scrollHeight);')
+
     def size(self, width=800, height=600):
         self.driver.set_window_size(width, height)
         self.log(f'width: {width}, height: {height}')
@@ -91,7 +98,10 @@ class Browser:
 
     def type(self, value):
         self.elem.send_keys(value)
-        self.log('type', value)
+        if value == self.password:
+            self.log('type password')
+        else:
+            self.log(f'type: {value}')
 
     def click(self):
         self.elem.click()
